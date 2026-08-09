@@ -1,0 +1,26 @@
+{
+  "name": "demo-express",
+  "version": "1.0.0",
+  "description": "Simple Node.js and Express demo app",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "demo"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.18.3",
+    "mysql2": "^3.23.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
