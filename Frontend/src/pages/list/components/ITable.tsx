@@ -127,9 +127,8 @@ export const ITable: React.FC<ITableProps> = ({
     columns={getColumns(onViewClick)}
     dataSource={customDataSource || data}
     bordered
-    scroll={{ x: "max-content" }}
+    scroll={{ x: 500 }}
     pagination={false}
-    virtual={true}
   />
 );
 
