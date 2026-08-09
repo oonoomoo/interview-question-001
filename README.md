@@ -39,3 +39,9 @@ npm run dev
 ```bash
 mysql -u root -p < Backend/database/schema.sql
 ```
+
+![alt text](image-list.png)
+
+![alt text](image-add.png)
+
+![alt text](image-view.png)
