@@ -65,6 +65,7 @@ export const List: React.FC = (): JSX.Element => {
       });
 
       await fetchUserList();
+      form.resetFields();
       setIsModalOpen(false);
     } catch (error) {
       console.error("Error creating user:", error);

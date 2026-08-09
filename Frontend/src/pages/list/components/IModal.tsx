@@ -43,7 +43,6 @@ const IModal: React.FC<Props> = (props: Props) => {
 
   const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
     console.log("Success:", values);
-    console.log("Success:", JSON.stringify(values, null, 2));
     onOk?.(values);
   };
 
@@ -101,6 +100,7 @@ const IModal: React.FC<Props> = (props: Props) => {
                     placeholder="ชื่อ"
                     readOnly={isViewMode}
                     style={{ width: compactFieldWidth }}
+                    maxLength={255}
                   />
                 </Form.Item>
               </Col>
@@ -113,6 +113,7 @@ const IModal: React.FC<Props> = (props: Props) => {
                     placeholder="นามสกุล"
                     readOnly={isViewMode}
                     style={{ width: isMobile ? "100%" : undefined }}
+                    maxLength={255}
                   />
                 </Form.Item>
               </Col>
@@ -120,15 +121,14 @@ const IModal: React.FC<Props> = (props: Props) => {
             <Form.Item<FieldType>
               label="วันเกิด"
               name="birthDate"
-              rules={[
-                { required: true, message: "Please input your birth date!" },
-              ]}
+              rules={[{ required: true, message: "กรุณาเลือกวันเกิด" }]}
             >
               <DatePicker
                 style={{ width: compactFieldWidth }}
                 inputReadOnly={isViewMode}
                 open={isViewMode ? false : undefined}
                 allowClear={isViewMode ? false : undefined}
+                disabledDate={(current) => current.isAfter(dayjs(), "day")}
                 onChange={(date) => {
                   form.setFieldValue(
                     "age",
@@ -143,11 +143,9 @@ const IModal: React.FC<Props> = (props: Props) => {
             <Form.Item<FieldType>
               label="ที่อยู่"
               name="address"
-              rules={[
-                { required: true, message: "Please input your address!" },
-              ]}
+              rules={[{ required: true, message: "กรุณากรอกที่อยู่" }]}
             >
-              <Input.TextArea readOnly={isViewMode} />
+              <Input.TextArea readOnly={isViewMode} maxLength={255} />
             </Form.Item>
           </Form>
         </ContentStyle>
