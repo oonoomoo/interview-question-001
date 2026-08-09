@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # interview-question-001
 
-โปรเจกต์ตัวอย่างที่ประกอบด้วย Backend ด้วย Node.js/Express และ Frontend ด้วย React/Vite
+โปรเจกต์ตัวอย่างที่ประกอบด้วย Backend ด้วย Node.js/Express และ Frontend ด้วย React/Vite/AntD
 
 ## โครงสร้างโปรเจกต์
 
@@ -40,12 +39,3 @@ npm run dev
 ```bash
 mysql -u root -p < Backend/database/schema.sql
 ```
-=======
-interview-question-001
-
-Frontend -> React.js + vite + antd
-Backend -> node.js + express
-
-DB -> MySQL 
-Script -> Backend/database/schema.sql
->>>>>>> origin/main
